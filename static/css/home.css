@@ -1,0 +1,74 @@
+:root {
+  --bg-color: #18181b;
+  --text-color: #fef3c7;
+  --dark-text-color: #27272a;
+  --tittle-color: #fbbf24;
+  --header-bg-color: #e4e4e7;
+  --dc-color: #60a5fa;
+  --dc-p-color: #bae6fd;
+  --marvel-color: #b91c1c;
+  --marvel-p-color: #fecaca;
+  font-size: 62.5%;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 20rem;
+  padding-top: 10rem;
+}
+
+.main h1 {
+  font-size: 4.8rem;
+  color: var(--tittle-color);
+}
+
+.main p {
+  font-size: 1.8rem;
+  text-align: justify;
+}
+
+.superhero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.superhero img {
+  width: 5.6rem;
+  object-fit: contain;
+}
+
+.dc {
+  margin-top: 1.2rem;
+}
+.dc img {
+  width: 10rem;
+  object-fit: contain;
+}
+.dc h1 {
+  color: var(--dc-color);
+}
+
+.dc-p {
+  color: var(--dc-p-color);
+}
+
+.marvel {
+  align-items: center;
+}
+
+.marvel img {
+  width: 18rem;
+  object-fit: contain;
+}
+
+.marvel h1 {
+  color: var(--marvel-color);
+}
+
+.marvel-p {
+  color: var(--marvel-p-color);
+}

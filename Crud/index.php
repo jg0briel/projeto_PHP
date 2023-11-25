@@ -23,6 +23,9 @@
         <div class="row">
             <div class="col mt-5">
                 <?php
+                include_once 'conection.php'; //inclui a conexão com o db
+                include_once'funcoes.php'; // Inclui o arquivo de funções no index
+                
                     switch(@$_REQUEST["page"]){
                         case "novo":
                             include("novo-usuario.php");

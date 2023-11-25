@@ -1,16 +1,14 @@
 <?php
+include_once'funcoes.php'; // Inclui o arquivo de funções no create
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];
-    $identidade_secreta = $_POST["identidade secreta"];
-    $poder = $_POST["poder"];
-    $fraqueza = $_POST["fraqueza"];
+    $identidade_civil = $_POST["identidade_civil"];
+    $habilidades = $_POST["habilidades"];
+    $historia = $_POST["historia"];
+    $universo = $_POST["universo"];
+    $funcao = $_POST["funcao"];
 
-    $sql = "INSERT INTO herois (nome, identidade secreta, poder, fraqueza) VALUES ('$nome', '$identidade_secreta', '$poder', '$fraqueza')";
-
-    if ($coon->query($sql) === TRUE) {
-        echo "Novo heroi cadastrado.";
-    } else{
-        echo "Heroi não encontrado";
-    }
+    create_character($nome, $identidade_civil, $habilidades, $historia, $universo, $funcao);
 }
 ?>

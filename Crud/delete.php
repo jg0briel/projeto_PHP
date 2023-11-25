@@ -1,13 +1,9 @@
 <?php
+include_once'funcoes.php'; // Inclui o arquivo de funções no delete
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
 
-    $sql = "DELETE FROM usuarios WHERE id=$id";
-
-    if ($coon->query($sql) === TRUE) {
-        echo "Registro deletado com sucesso";
-    } else {
-        echo "Erro: " . $sql . "<br>". $conn->error;
-    }
+    delete_character($id);
 }
 ?>

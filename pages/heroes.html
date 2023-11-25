@@ -20,12 +20,70 @@
         <img src="../static/images/batman-icon.svg" alt="Ícone do Batman" />
         <ul>
           <li><a href="index.html#top">Início</a></li>
-          <li><a href="heroes.html">Heróis</a></li>
-          <li><a href="villains.html">Vilões</a></li>
+          <li><a href="heroes.html#top">Heróis</a></li>
+          <li><a href="villains.html#top">Vilões</a></li>
         </ul>
       </nav>
     </header>
-    <main class="main" id="top">HEROES</main>
+    <main class="main" id="top">
+      <section class="card">
+        <div class="content-data">
+          <p>Nome:</p>
+          <p>História:</p>
+          <p>Poder:</p>
+          <p>Identidade Civil:</p>
+          <p>Universo:</p>
+          <p>Função:</p>
+        </div>
+        <div class="delete">
+          <button class="open-modal-btn-delete"><img src="../static/images/delete.png" alt="Apagar"></button>
+          <div id="overlay-delete"></div>
+          <div id="modal-delete">
+              <span id="close-btn-delete" onclick="closeModalDelete()">&times;</span>
+              <h2>Excluir</h2>
+              <div class="content-delete">
+                <div class="text-delete">
+                  <p>Tem certeza que deseja excluir?</p>
+                </div>
+                <button onclick="deleteData()">Sim</button>
+                <button onclick="closeModalDelete()">Não</button>
+              </div>
+            </div>
+        </div>
+        <div class="edit">
+          <button class="open-modal-btn"><img src="../static/images/edit.png" alt="Editar"></button>
+          <div id="overlay"></div>
+          <div id="modal">
+              <span id="close-btn" onclick="closeModal()">&times;</span>
+              <h2>Editar</h2>
+              <div class="content">
+                <form action="">
+                  <label>Nome</label>
+                  <input type="text">
+    
+                  <label>História</label>
+                  <textarea id="myTextarea" class="area" oninput="resizeTextArea(this)"></textarea>
+    
+                  <label>Poder</label>
+                  <input type="text">
+    
+                  <label>Identidade Civil</label>
+                  <input type="text">
+    
+                  <label>Universo</label>
+                  <input type="text">
+  
+                  <label>Função</label>
+                  <input type="text">
+    
+                  <button type="submit">Enviar</button>
+                </form>
+              </div>
+            </div>
+        </div>
+       
+      </section>
+    </main>
     <footer class="footer">
       <section>
         <h4>Projeto da disciplina de programação web</h4>
@@ -40,5 +98,6 @@
         </ul>
       </section>
     </footer>
+    <script src="../static/js/index.js"></script>
   </body>
 </html>

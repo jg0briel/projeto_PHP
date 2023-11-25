@@ -4,6 +4,7 @@
   --dark-text-color: #27272a;
   --tittle-color: #fbbf24;
   --header-bg-color: #e4e4e7;
+  --modal-bg-color: #52525b;
   font-size: 62.5%;
 }
 
@@ -92,4 +93,246 @@ body {
 
 .footer li {
   font-size: 1.6rem;
+}
+
+.card {
+  margin: 1rem;
+  border: solid 0.5rem var(--tittle-color);
+  border-radius: 1rem;
+  width: 45rem;
+}
+
+.content-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete {
+  height: 4rem;
+  width: 4rem;
+  float: right;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.delete img {
+  width: 4rem;
+  object-fit: cover;
+}
+
+.edit {
+  height: 4rem;
+  width: 4rem;
+  float: right;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.edit img {
+  width: 4rem;
+  object-fit: cover;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#modal {
+  width: 50%;
+  display: none;
+  position: fixed;
+  background: var(--modal-bg-color);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: var(--tittle-color);
+  font-size: 2.4rem;
+  overflow-y: scroll;
+  top: 5rem;
+  left:50rem;
+  max-height: 70rem;
+}
+
+#modal::-webkit-scrollbar {
+  width: 1rem;
+}
+
+#modal::-webkit-scrollbar-thumb {
+  background-color: var(--tittle-color);
+  border-radius: 0.4rem;
+}
+
+#modal::-webkit-scrollbar-track {
+  background-color: var(--modal-bg-color);
+}
+
+
+#modal.active,
+#overlay.active {
+  display: block;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.content form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.content input {
+  background-color: transparent;
+  border: solid 0.2rem var(--tittle-color);
+  border-radius: 0.4rem;
+  color: var(--text-color);
+  font-family: 'Poppins';
+  font-size: 2rem;
+  word-wrap: break-all;
+}
+
+.area {
+  background-color: transparent;
+  border: solid 0.2rem var(--tittle-color);
+  border-radius: 0.4rem;
+  color: var(--text-color);
+  font-family: 'Poppins';
+  font-size: 2rem;
+  resize: none;
+  overflow-y: hidden; 
+  min-height: 3rem;
+  width: 100%;
+}
+
+.area:focus {
+  outline: none;
+  border: solid 0.2rem var(--tittle-color);
+}
+
+.content input:focus {
+  outline: none;
+  border: solid 0.2rem var(--tittle-color);
+}
+
+.content button {
+  margin-top: 1rem;
+  background-color: var(--tittle-color);
+  font-family: 'Poppins';
+  color: var(--modal-bg-color);
+  font-weight: 800;
+  font-size: 2.4rem;
+  border: solid 0.2rem transparent;
+  border-radius: 0.4rem;
+}
+
+#close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 3.6rem;
+}
+.open-modal-btn {
+  background-color: transparent;
+  border: 0;
+}
+
+.open-modal-btn-delete {
+  background-color: transparent;
+  border: 0;
+}
+
+#overlay-delete {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#modal-delete {
+  width: 50%;
+  display: none;
+  position: fixed;
+  background: var(--modal-bg-color);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: var(--tittle-color);
+  font-size: 2.4rem;
+  overflow-y: scroll;
+  top: 5rem;
+  left:50rem;
+  max-height: 70rem;
+}
+
+#modal-delete::-webkit-scrollbar {
+  width: 1rem;
+}
+
+#modal-delete::-webkit-scrollbar-thumb {
+  background-color: var(--tittle-color);
+  border-radius: 0.4rem;
+}
+
+#modal-delete::-webkit-scrollbar-track {
+  background-color: var(--modal-bg-color);
+}
+
+#close-btn-delete {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 3.6rem;
+}
+
+#modal-delete.active,
+#overlay-delete.active {
+  display: block;
+}
+
+.content-delete {
+  align-items: center;
+}
+
+.text-delete {
+  display: flex;
+  justify-content: center;
+}
+
+.content-delete button {
+  margin-top: 1rem;
+  background-color: var(--tittle-color);
+  font-family: 'Poppins';
+  color: var(--modal-bg-color);
+  font-weight: 800;
+  font-size: 2.4rem;
+  border: solid 0.2rem transparent;
+  border-radius: 0.4rem;
 }

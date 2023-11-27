@@ -33,9 +33,9 @@
         <section class="card">
           <div class="content-data">
             <p>Nome:</p>
-            <p>História:</p>
-            <p>Poder:</p>
             <p>Identidade Civil:</p>
+            <p>Habilidades:</p>
+            <p>História:</p>
             <p>Universo:</p>
             <p>Função:</p>
           </div>
@@ -65,14 +65,14 @@
                     <label>Nome</label>
                     <input type="text">
       
-                    <label>História</label>
-                    <textarea id="myTextArea" class="area" oninput="resizeTextArea(this)"></textarea>
-      
-                    <label>Poder</label>
-                    <input type="text">
-      
                     <label>Identidade Civil</label>
                     <input type="text">
+      
+                    <label>Habilidades</label>
+                    <input type="text">
+      
+                    <label>História</label>
+                    <textarea id="myTextAreaCreate" class="area-create" oninput="resizeTextArea(this)"></textarea>
       
                     <label>Universo</label>
                     <input type="text">
@@ -80,7 +80,7 @@
                     <label>Função</label>
                     <input type="text">
       
-                    <button type="submit">Enviar</button>
+                    <button type="submit"></button>
                   </form>
                 </div>
             </div>
@@ -94,26 +94,26 @@
                 <span id="close-btn-create" onclick="closeModalCreate()">&times;</span>
                 <h2>Adicionar Heróis</h2>
                 <div class="content-create">
-                  <form action="">
-                    <label>Nome</label>
-                    <input type="text">
+                  <form action="CRUD/create.php" method="POST">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required>
       
-                    <label>História</label>
-                    <textarea id="myTextAreaCreate" class="area-create" oninput="resizeTextArea(this)"></textarea>
+                    <label for="identidade_civil">Identidade Civil</label>
+                    <input type="text" id="identidade_civil" name="identidade_civil" required>
       
-                    <label>Poder</label>
-                    <input type="text">
+                    <label for="habilidades">Habilidades</label>
+                    <input type="text" id="habilidades" name="habilidades">
       
-                    <label>Identidade Civil</label>
-                    <input type="text">
+                    <label for="historia">História</label>
+                    <textarea id="myTextArea" class="area" oninput="resizeTextArea(this)" id="historia" name="historia" required></textarea>
       
-                    <label>Universo</label>
-                    <input type="text">
+                    <label for="universo">Universo</label>
+                    <input type="text" id="universo" name="universo" required>
     
-                    <label>Função</label>
-                    <input type="text">
+                    <label for="funcao">Função</label>
+                    <input type="text" id="funcao" name="funcao" required>
       
-                    <button type="submit">Enviar</button>
+                    <button type="submit">Cadastrar</button>
                   </form>
                 </div>
             </div>

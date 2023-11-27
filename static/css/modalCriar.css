@@ -1,0 +1,137 @@
+.create {
+  height: 4rem;
+  width: 4rem;
+  float: right;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.create img {
+  width: 4rem;
+  object-fit: cover;
+}
+
+#overlay-create {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#modal-create {
+  width: 50%;
+  display: none;
+  position: fixed;
+  background: var(--modal-bg-color);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  color: var(--tittle-color);
+  font-size: 2.4rem;
+  overflow-y: scroll;
+  top: 5rem;
+  left:50rem;
+  max-height: 70rem;
+}
+
+#modal-create::-webkit-scrollbar {
+  width: 1rem;
+}
+
+#modal-create::-webkit-scrollbar-thumb {
+  background-color: var(--tittle-color);
+  border-radius: 0.4rem;
+}
+
+#modal-create::-webkit-scrollbar-track {
+  background-color: var(--modal-bg-color);
+}
+
+#modal-create.active,
+#overlay-create.active {
+  display: block;
+}
+
+.content-create {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.content-create form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.content-create input {
+  background-color: transparent;
+  border: solid 0.2rem var(--tittle-color);
+  border-radius: 0.4rem;
+  color: var(--text-color);
+  font-family: 'Poppins';
+  font-size: 2rem;
+  word-wrap: break-all;
+}
+
+.area-create {
+  background-color: transparent;
+  border: solid 0.2rem var(--tittle-color);
+  border-radius: 0.4rem;
+  color: var(--text-color);
+  font-family: 'Poppins';
+  font-size: 2rem;
+  resize: none;
+  overflow-y: hidden; 
+  min-height: 3rem;
+  width: 100%;
+}
+
+.area-create:focus {
+  outline: none;
+  border: solid 0.2rem var(--tittle-color);
+}
+
+.content-create input:focus {
+  outline: none;
+  border: solid 0.2rem var(--tittle-color);
+}
+
+.content-create button {
+  margin-top: 1rem;
+  background-color: var(--tittle-color);
+  font-family: 'Poppins';
+  color: var(--modal-bg-color);
+  font-weight: 800;
+  font-size: 2.4rem;
+  border: solid 0.2rem transparent;
+  border-radius: 0.4rem;
+  width: 50%;
+  height: 8rem;
+  align-self: center;
+  cursor: pointer;
+}
+
+#close-btn-create {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 3.6rem;
+}
+
+.open-modal-btn-create {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+}

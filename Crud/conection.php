@@ -12,6 +12,5 @@
         die("Conexão falhou: " . $conexao->connect_error);
     } 
     else {
-        echo "Conexão bem-sucedida!";
     }
 ?>

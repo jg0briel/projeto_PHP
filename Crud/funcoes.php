@@ -18,26 +18,34 @@ function create_character($nome, $identidade_civil, $habilidades, $historia, $un
     }
 }
 
-function read_characters() {
-
+function read_characters()
+{
     global $conexao;
-    $sql = "SELECT * FROM herois";
+    $sql = "SELECT * FROM heroes";
     $result = $conexao->query($sql);
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "ID: ". $row["id"] 
-        ."- Nome:". $row["nome"] 
-        ."- Identidade civil:" . $row["identidade_civil"]
-        ."- Habilidades:". $row["habilidades"] 
-        ."- História:". $row["historia"]
-        ."- Universo:". $row["universo"] 
-        ."- Função:". $row["funcao"]
-        . "<br>";
-    } 
-} else{
-
-    echo "Sem resultado";
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<section class='card'>";
+            echo "<div class='content-data'>";
+            echo "<p>Nome: " . $row["nome_heroi"] . "</p>";
+            echo "<p>Identidade Civil: " . $row["identidade_civil"] . "</p>";
+            echo "<p>Habilidades: " . $row["habilidades"] . "</p>";
+            echo "<p class='history'>História: " . $row["historia"] . "</p>";
+            echo "<p>Universo: " . $row["universo"] . "</p>";
+            echo "<p>Função: " . $row["funcao"] . "</p>";
+            echo "</div>";
+            echo "<div class='delete'>";
+            echo "<button class='open-modal-btn-delete'><img src='../static/images/delete.png' alt='Apagar'></button>";
+            echo "</div>";
+            echo "<div class='edit'>";
+            echo "<button class='open-modal-btn'><img src='../static/images/edit.png' alt='Editar'></button>";
+            echo "</div>";
+            echo "</div>";
+            echo "</section>";
+        }
+    } else {
+        echo "Sem resultado";
     }
 }
 

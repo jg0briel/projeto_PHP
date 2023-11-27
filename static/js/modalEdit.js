@@ -1,3 +1,10 @@
+const editButtons = document.querySelectorAll('.open-modal-btn');
+
+editButtons.forEach(button => {
+    button.addEventListener('click', openModal);
+});
+
+
 function openModal() {
   document.querySelector('#overlay').classList.add('active');
   document.querySelector('#modal').classList.add('active');
@@ -24,8 +31,6 @@ function handleSubmit(e) {
   e.preventDefault();
   closeModal(); 
 }
-
-document.querySelector('.open-modal-btn').addEventListener('click', openModal);
 
 document.querySelector('.content form').addEventListener('submit', handleSubmit);
 

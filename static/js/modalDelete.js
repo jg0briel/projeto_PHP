@@ -1,3 +1,8 @@
+const deleteButtons = document.querySelectorAll('.open-modal-btn-delete');
+
+deleteButtons.forEach(button => {
+    button.addEventListener('click', openModalDelete);
+});
 
 function openModalDelete() {
   document.querySelector('#overlay-delete').classList.add('active');
@@ -21,4 +26,3 @@ function closeModalDelete() {
   }, 300);
 }
 
-document.querySelector('.open-modal-btn-delete').addEventListener('click', openModalDelete);

@@ -1,8 +1,9 @@
 <?php
+include('../Crud/funcoes.php');
+
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,7 +12,7 @@ ini_set('display_errors', '1');
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Heroes Database</title>
     <link rel="stylesheet" href="../static/css/global.css" />
-    <link rel="stylesheet" href="../static/css/home.css" />
+      <link rel="stylesheet" href="../static/css/heroes.css" />
     <link rel="stylesheet" href="../static/css/modalExcluir.css">
     <link rel="stylesheet" href="../static/css/modalEditar.css">
     <link rel="stylesheet" href="../static/css/modalCriar.css">
@@ -35,8 +36,15 @@ ini_set('display_errors', '1');
       </nav>
     </header>
     <main class="main" id="top">
-      <div class="cards">
-        <section class="card">
+      <?php
+        read_characters();
+      ?>
+      <section class="card-create">
+        <div class="sizeFull">
+          <button class="open-modal-btn-create">Adicione aqui o seu herói!</button>
+        </div>
+      </section>
+        <!-- <section class="card">
           <div class="content-data">
             <p>Nome:</p>
             <p>Identidade Civil:</p>
@@ -47,21 +55,45 @@ ini_set('display_errors', '1');
           </div>
           <div class="delete">
             <button class="open-modal-btn-delete"><img src="../static/images/delete.png" alt="Apagar"></button>
-            <div id="overlay-delete"></div>
-            <div id="modal-delete">
-                <span id="close-btn-delete" onclick="closeModalDelete()">&times;</span>
-                <h2>Excluir</h2>
-                <div class="content-delete">
-                  <div class="text-delete">
-                    <p>Tem certeza que deseja excluir?</p>
-                  </div>
-                  <button onclick="deleteData()">Sim</button>
-                  <button onclick="closeModalDelete()">Não</button>
-                </div>
-              </div>
           </div>
           <div class="edit">
             <button class="open-modal-btn"><img src="../static/images/edit.png" alt="Editar"></button>
+            </div>
+          </div>
+        </section> -->
+       
+
+        <section id="modals">
+          <div id="create-modal">
+            <div id="overlay-create"></div>
+            <div id="modal-create">
+                <span id="close-btn-create" onclick="closeModalCreate()">&times;</span>
+                <h2>Adicionar Heróis</h2>
+                <div class="content-create">
+                  <form id="createHero" method="POST">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required>
+      
+                    <label for="identidade_civil">Identidade Civil</label>
+                    <input type="text" id="identidade_civil" name="identidade_civil" required>
+      
+                    <label for="habilidades">Habilidades</label>
+                    <input type="text" id="habilidades" name="habilidades">
+      
+                    <label for="historia">História</label>
+                    <textarea class="area" oninput="resizeTextArea(this)" id="historia" name="historia" required></textarea>
+      
+                    <label for="universo">Universo</label>
+                    <input type="text" id="universo" name="universo" required>
+    
+                    <label for="funcao">Função</label>
+                    <input type="text" id="funcao" name="funcao" required>
+      
+                    <button type="submit">Cadastrar</button>
+                  </form>
+              </div>
+          </div>
+          <div id="edit-modal">
             <div id="overlay"></div>
             <div id="modal">
               <span id="close-btn" onclick="closeModal()">&times;</span>
@@ -89,48 +121,21 @@ ini_set('display_errors', '1');
                   <button type="submit">Enviar</button>
                 </form>
               </div>
-            </div>
-          </div>
-        </section>
-        <section class="card-create">
-          <div class="sizeFull">
-            <button class="open-modal-btn-create">Adicione aqui o seu herói!</button>
-            <div id="overlay-create"></div>
-            <div id="modal-create">
-                <span id="close-btn-create" onclick="closeModalCreate()">&times;</span>
-                <h2>Adicionar Heróis</h2>
-                <div class="content-create">
-                  <form id="createHero" method="POST">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" required>
-      
-                    <label for="identidade_civil">Identidade Civil</label>
-                    <input type="text" id="identidade_civil" name="identidade_civil" required>
-      
-                    <label for="habilidades">Habilidades</label>
-                    <input type="text" id="habilidades" name="habilidades">
-      
-                    <label for="historia">História</label>
-                    <textarea class="area" oninput="resizeTextArea(this)" id="historia" name="historia" required></textarea>
-      
-                    <label for="universo">Universo</label>
-                    <input type="text" id="universo" name="universo" required>
-    
-                    <label for="funcao">Função</label>
-                    <input type="text" id="funcao" name="funcao" required>
-      
-                    <button type="submit">Cadastrar</button>
-                  </form>
+          </div>  
+          <div id="delete-modal">
+            <div id="overlay-delete"></div>
+            <div id="modal-delete">
+                <span id="close-btn-delete" onclick="closeModalDelete()">&times;</span>
+                <h2>Excluir</h2>
+                <div class="content-delete">
+                  <div class="text-delete">
+                    <p>Tem certeza que deseja excluir?</p>
+                  </div>
+                  <button onclick="deleteData()">Sim</button>
+                  <button onclick="closeModalDelete()">Não</button>
                 </div>
-            </div>
+              </div>
           </div>
-        </section>
-
-        <section id="modals">
-          <div id="create-modal">
-
-          </div>
-          <div></div>  
         </section>
       </div>
     </main>

@@ -99,7 +99,8 @@ body {
   margin: 1rem;
   border: solid 0.5rem var(--tittle-color);
   border-radius: 1rem;
-  width: 45rem;
+  width: 70rem;
+  height: 75rem;
 }
 
 .card p {
@@ -113,7 +114,8 @@ body {
   margin: 1rem;
   border: solid 0.5rem var(--tittle-color);
   border-radius: 1rem;
-  width: 45rem;
+  width: 70rem;
+  height: 75rem;
   background-color: var(--modal-bg-color);
   align-items: center;
   display: flex;
@@ -150,9 +152,25 @@ body {
   background-color: var(--header-bg-color);
 }
 
-.cards {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
+.content-data {
+  height: 69rem;
+}
+
+
+.main p::-webkit-scrollbar {
+  width: 1rem;
+}
+
+.main p::-webkit-scrollbar-thumb {
+  background-color: var(--tittle-color);
+  border-radius: 0.4rem;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--tittle-color);
+  border-radius: 0.4rem;
 }

@@ -13,6 +13,9 @@ CREATE TABLE heroes(
     funcao CHAR(10)
 );
 
+ALTER TABLE heroes MODIFY id INT AUTO_INCREMENT;
+
+
 -- Variáveis da História de cada personagem
 	
 -- Personagens DC:
@@ -188,4 +191,6 @@ SELECT funcao, nome_heroi FROM heroes ORDER BY funcao;
 SELECT * FROM heroes WHERE funcao LIKE 'Vilão';
 SELECT * FROM heroes WHERE nome_heroi LIKE 'D%'; 
 SELECT * FROM heroes WHERE nome_heroi LIKE '%o%'; 
+DELETE FROM heroes WHERE id = 25; -- Lembre-se de apagar todo o banco e dps criar tudo de novo, para remover a contagem atual do id que tá em 25
+
 

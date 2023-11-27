@@ -40,7 +40,7 @@
   overflow-y: scroll;
   top: 5rem;
   left:50rem;
-  max-height: 70rem;
+  max-height: 50rem;
 }
 
 #modal-create::-webkit-scrollbar {

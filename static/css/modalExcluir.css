@@ -36,12 +36,13 @@
 }
 
 #modal-delete {
-  width: 50%;
+  width: 33%;
   display: none;
   position: fixed;
   background: var(--modal-bg-color);
   padding: 2rem;
-  border-radius: 0.5rem;
+  border: solid transparent;
+  border-radius: 0.8rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
   z-index: 1;
   opacity: 0;
@@ -50,9 +51,9 @@
   color: var(--tittle-color);
   font-size: 2.4rem;
   overflow-y: scroll;
-  top: 5rem;
-  left:50rem;
-  max-height: 70rem;
+  top: 27rem;
+  left: 58rem;
+  max-height: 40rem;
 }
 
 #modal-delete::-webkit-scrollbar {
@@ -104,4 +105,13 @@
   border: solid 0.2rem transparent;
   border-radius: 0.4rem;
   cursor: pointer;
+}
+
+@media (max-width: 1366px) {
+
+  #modal-delete {
+    top: 20rem;
+    left: 47rem;
+    max-height: 40rem;
+  }
 }

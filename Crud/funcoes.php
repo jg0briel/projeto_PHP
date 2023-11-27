@@ -1,4 +1,3 @@
-
 <?php
 include_once 'conection.php';
 
@@ -6,24 +5,24 @@ include_once 'conection.php';
 
 function create_character($nome, $identidade_civil, $habilidades, $historia, $universo, $funcao) {
 
-    global $coon;
+    global $conexao;
 
     $sql = "INSERT INTO heroes 
-    (nome, identidade_civil, poder, universo, funcao) 
-    VALUES ('$nome', '$identidade_civil', '$habilidades', '$universo', '$funcao')";
+    (nome_heroi, identidade_civil, habilidades, historia, universo, funcao) 
+    VALUES ('$nome', '$identidade_civil', '$habilidades', '$historia', '$universo', '$funcao')";
 
-    if ($coon->query($sql) === TRUE) {
+    if ($conexao->query($sql) === TRUE) {
         echo "Novo personagem cadastrado.";
     } else{
-        echo "Personagem não encontrado";
+        echo "Personagem não encontrado" . $conexao->error;;
     }
 }
 
 function read_characters() {
 
-    global $coon;
+    global $conexao;
     $sql = "SELECT * FROM herois";
-    $result = $coon->query($sql);
+    $result = $conexao->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -44,7 +43,7 @@ if ($result->num_rows > 0) {
 
 function update_character($id, $nome, $identidade_civil, $habilidades, $historia, $universo, $funcao) {
 
-    global $coon;
+    global $conexao;
 
     $sql = "UPDATE usuarios SET nome = '$nome',
     identidade_civil = '$identidade_civil',
@@ -53,7 +52,7 @@ function update_character($id, $nome, $identidade_civil, $habilidades, $historia
     universo = '$universo',
     funcao = '$funcao' WHERE id='$id'";
 
-    if ($coon->query($sql) === TRUE) {
+    if ($conexao->query($sql) === TRUE) {
     echo "Registro atulizado com sucesso";
     } else{
     echo "Erro";
@@ -62,13 +61,13 @@ function update_character($id, $nome, $identidade_civil, $habilidades, $historia
 
 function delete_character($id) {
 
-    global $coon;
+    global $conexao;
 
     $sql = "DELETE FROM usuarios WHERE id=$id";
-    if ($coon->query($sql) === TRUE) {
+    if ($conexao->query($sql) === TRUE) {
         echo "Registro deletado com sucesso";
     } else {
-        echo "Erro: " . $sql . "<br>". $coon->error;
+        echo "Erro: " . $sql . "<br>". $conexao->error;
     }
 }
 ?>

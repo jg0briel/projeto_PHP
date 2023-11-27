@@ -1,44 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-</head>
-<body>
-    <nav class="conteiner">
-        <div>
-            <div class="nav-conteiner">
-                <img id="logo" scr="./img/shivalogo.jpeg" alt="Logo projeto">
-                <ul class ="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="page=novo">Novo Herói</a></li>
-                    <li class="nav-item"><a class="nav-link" href="page=listar">Listar Heróis</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col mt-5">
-                <?php
-                include_once 'conection.php'; //inclui a conexão com o db
-                include_once'funcoes.php'; // Inclui o arquivo de funções no index
-                
-                    switch(@$_REQUEST["page"]){
-                        case "novo":
-                            include("novo-usuario.php");
-                        break;
-                        case "lista":
-                            include("listar-usuario.php");
-                        break;
-                        default:
-                        echo"Bem vindo";
-                    }
-                ?>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>CRUD dos Herois</title>
+        </head>
+        <body>
+            <form action="create.php" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required><br>
+
+                <label for="identidade_civil">Identidade Civil</label>
+                <input type="text" id="identidade_civil" name="identidade_civil" required><br>
+
+                <label for="habilidades">Habilidades:</label>
+                <textarea id="habilidades" name="habilidades" rows="4" required></textarea><br>
+
+                <label for="historia">História:</label>
+                <textarea id="historia" name="historia" rows="6" required></textarea><br>
+
+                <label for="universo">Universo:</label>
+                <input type="text" id="universo" name="universo" required><br>
+
+                <label for="funcao">Função:</label>
+                <input type="text" id="funcao" name="funcao" required><br>
+
+                <input type="submit" value="Cadastrar">
+            </form>
+        </body>
+    </html>

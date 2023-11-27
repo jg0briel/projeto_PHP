@@ -1,5 +1,6 @@
 <?php
-include_once'funcoes.php'; // Inclui o arquivo de funções no create
+include_once 'conection.php';
+include_once 'funcoes.php'; // Inclui o arquivo de funções no create
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];

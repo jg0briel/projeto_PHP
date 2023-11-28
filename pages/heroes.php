@@ -37,7 +37,7 @@ ini_set('display_errors', '1');
     </header>
     <main class="main" id="top">
       <?php
-        read_characters();
+        read_heroes();
       ?>
       <section class="card-create">
         <div class="sizeFull">

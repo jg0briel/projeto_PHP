@@ -1,11 +1,22 @@
+<?php
+include('../Crud/funcoes.php');
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Heroes Database</title>
     <link rel="stylesheet" href="../static/css/global.css" />
-    <link rel="stylesheet" href="../static/css/home.css" />
+    <link rel="stylesheet" href="../static/css/heroes.css" />
+    <link rel="stylesheet" href="../static/css/modalExcluir.css">
+    <link rel="stylesheet" href="../static/css/modalEditar.css">
+    <link rel="stylesheet" href="../static/css/modalCriar.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -26,7 +37,92 @@
       </nav>
     </header>
     <main class="main" id="top">
-      <section>VILOES</section>
+      <?php
+        read_villains();
+      ?>
+      <section class="card-create">
+        <div class="sizeFull">
+          <button class="open-modal-btn-create">Adicione aqui o seu herói!</button>
+        </div>
+      </section>
+
+        <section id="modals">
+          <div id="create-modal">
+            <div id="overlay-create"></div>
+            <div id="modal-create">
+                <span id="close-btn-create" onclick="closeModalCreate()">&times;</span>
+                <h2>Adicionar Heróis</h2>
+                <div class="content-create">
+                  <form id="createHero" method="POST">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required>
+      
+                    <label for="identidade_civil">Identidade Civil</label>
+                    <input type="text" id="identidade_civil" name="identidade_civil" required>
+      
+                    <label for="habilidades">Habilidades</label>
+                    <input type="text" id="habilidades" name="habilidades">
+      
+                    <label for="historia">História</label>
+                    <textarea class="area" oninput="resizeTextArea(this)" id="historia" name="historia" required></textarea>
+      
+                    <label for="universo">Universo</label>
+                    <input type="text" id="universo" name="universo" required>
+    
+                    <label for="funcao">Função</label>
+                    <input type="text" id="funcao" name="funcao" required>
+      
+                    <button type="submit">Cadastrar</button>
+                  </form>
+              </div>
+          </div>
+          <div id="edit-modal">
+            <div id="overlay"></div>
+            <div id="modal">
+              <span id="close-btn" onclick="closeModal()">&times;</span>
+              <h2>Editar</h2>
+              <div class="content">
+                <form id="editHero" method="POST">
+                    <input type="text" id="idEdit" name="idEdit" value="default">
+
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nomeEdit" name="nomeEdit" required>
+      
+                    <label for="identidade_civil">Identidade Civil</label>
+                    <input type="text" id="identidade_civilEdit" name="identidade_civilEdit" required>
+      
+                    <label for="habilidades">Habilidades</label>
+                    <input type="text" id="habilidadesEdit" name="habilidadesEdit">
+      
+                    <label for="historia">História</label>
+                    <textarea class="area" oninput="resizeTextArea(this)" id="historiaEdit" name="historiaEdit" required></textarea>
+      
+                    <label for="universo">Universo</label>
+                    <input type="text" id="universoEdit" name="universoEdit" required>
+    
+                    <label for="funcao">Função</label>
+                    <input type="text" id="funcaoEdit" name="funcaoEdit" required>
+      
+                    <button type="submit">Cadastrar</button>
+                  </form>
+              </div>
+          </div>  
+          <div id="delete-modal">
+            <div id="overlay-delete"></div>
+            <div id="modal-delete">
+                <span id="close-btn-delete" onclick="closeModalDelete()">&times;</span>
+                <h2>Excluir</h2>
+                <div class="content-delete">
+                  <div class="text-delete">
+                    <p>Tem certeza que deseja excluir?</p>
+                  </div>
+                  <button onclick="deleteData()">Sim</button>
+                  <button onclick="closeModalDelete()">Não</button>
+                </div>
+              </div>
+          </div>
+        </section>
+      </div>
     </main>
     <footer class="footer">
       <section>

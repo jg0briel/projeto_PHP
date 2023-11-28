@@ -61,7 +61,7 @@ function read_heroes()
             echo "<div class='content-data'>";
             echo "<p>Nome: " . $row["nome_heroi"] . "</p>";
             echo "<p>Identidade Civil: " . $row["identidade_civil"] . "</p>";
-            echo "<p>Habilidades: " . $row["habilidades"] . "</p>";
+            echo "<p class='hability'>Habilidades: " . $row["habilidades"] . "</p>";
             echo "<p class='history'>História: " . $row["historia"] . "</p>";
             echo "<p>Universo: " . $row["universo"] . "</p>";
             echo "<p>Função: " . $row["funcao"] . "</p>";
@@ -92,7 +92,7 @@ function read_villains()
             echo "<div class='content-data'>";
             echo "<p>Nome: " . $row["nome_heroi"] . "</p>";
             echo "<p>Identidade Civil: " . $row["identidade_civil"] . "</p>";
-            echo "<p>Habilidades: " . $row["habilidades"] . "</p>";
+            echo "<p class='hability'>Habilidades: " . $row["habilidades"] . "</p>";
             echo "<p class='history'>História: " . $row["historia"] . "</p>";
             echo "<p>Universo: " . $row["universo"] . "</p>";
             echo "<p>Função: " . $row["funcao"] . "</p>";

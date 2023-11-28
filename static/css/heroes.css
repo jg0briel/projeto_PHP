@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   text-align: center;
   margin: 0 10rem;
+  gap: 10rem;
   padding-top: 10rem;
 }
 
@@ -19,6 +20,12 @@
 }
 
 .history {
+  height: 15rem;
+  overflow-y: scroll;
+}
+
+.hability {
+  float: left;
   height: 15rem;
   overflow-y: scroll;
 }

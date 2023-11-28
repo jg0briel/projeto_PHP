@@ -121,8 +121,8 @@ body {
 }
 
 .card-create button {
-  color:var(--text-color);
-  font-family: 'Poppins';
+  color: var(--text-color);
+  font-family: "Poppins";
   font-weight: 700;
   font-size: 3.2rem;
   margin: 0 2rem;
@@ -135,9 +135,8 @@ body {
 }
 
 .card-create:hover {
-  border: solid 0.5rem var(--dark-text-color)
+  border: solid 0.5rem var(--dark-text-color);
 }
-
 
 .sizeFull {
   height: 100%;
@@ -152,7 +151,6 @@ body {
 .content-data {
   height: 69rem;
 }
-
 
 .main p::-webkit-scrollbar {
   width: 1rem;
@@ -170,4 +168,17 @@ body {
 ::-webkit-scrollbar-thumb {
   background-color: var(--tittle-color);
   border-radius: 0.4rem;
+}
+
+@media (max-width: 1366px) {
+  .card-create {
+    width: 50rem;
+    height: 75rem;
+    margin: 1rem;
+  }
+
+  .card {
+    width: 50rem;
+    height: 75rem;
+  }
 }

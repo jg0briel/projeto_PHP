@@ -44,24 +44,6 @@ ini_set('display_errors', '1');
           <button class="open-modal-btn-create">Adicione aqui o seu herói!</button>
         </div>
       </section>
-        <!-- <section class="card">
-          <div class="content-data">
-            <p>Nome:</p>
-            <p>Identidade Civil:</p>
-            <p>Habilidades:</p>
-            <p>História:</p>
-            <p>Universo:</p>
-            <p>Função:</p>
-          </div>
-          <div class="delete">
-            <button class="open-modal-btn-delete"><img src="../static/images/delete.png" alt="Apagar"></button>
-          </div>
-          <div class="edit">
-            <button class="open-modal-btn"><img src="../static/images/edit.png" alt="Editar"></button>
-            </div>
-          </div>
-        </section> -->
-       
 
         <section id="modals">
           <div id="create-modal">
@@ -99,27 +81,29 @@ ini_set('display_errors', '1');
               <span id="close-btn" onclick="closeModal()">&times;</span>
               <h2>Editar</h2>
               <div class="content">
-                <form action="">
-                  <label>Nome</label>
-                  <input type="text">
-    
-                  <label>Identidade Civil</label>
-                  <input type="text">
-    
-                  <label>Habilidades</label>
-                  <input type="text">
-    
-                  <label>História</label>
-                  <textarea id="myTextAreaCreate" class="area-create" oninput="resizeTextArea(this)"></textarea>
-    
-                  <label>Universo</label>
-                  <input type="text">
+                <form id="editHero" method="POST">
+                    <input type="text" id="idEdit" name="idEdit" value="default">
 
-                  <label>Função</label>
-                  <input type="text">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nomeEdit" name="nomeEdit" required>
+      
+                    <label for="identidade_civil">Identidade Civil</label>
+                    <input type="text" id="identidade_civilEdit" name="identidade_civilEdit" required>
+      
+                    <label for="habilidades">Habilidades</label>
+                    <input type="text" id="habilidadesEdit" name="habilidadesEdit">
+      
+                    <label for="historia">História</label>
+                    <textarea class="area" oninput="resizeTextArea(this)" id="historiaEdit" name="historiaEdit" required></textarea>
+      
+                    <label for="universo">Universo</label>
+                    <input type="text" id="universoEdit" name="universoEdit" required>
     
-                  <button type="submit">Enviar</button>
-                </form>
+                    <label for="funcao">Função</label>
+                    <input type="text" id="funcaoEdit" name="funcaoEdit" required>
+      
+                    <button type="submit">Cadastrar</button>
+                  </form>
               </div>
           </div>  
           <div id="delete-modal">

@@ -39,7 +39,7 @@ function read_characters()
             echo "<button class='open-modal-btn-delete'><img src='../static/images/delete.png' alt='Apagar'></button>";
             echo "</div>";
             echo "<div class='edit'>";
-            echo "<button class='open-modal-btn'><img src='../static/images/edit.png' alt='Editar'></button>";
+            echo "<button class='open-modal-btn' data-id='" . $row['id'] . "'><img src='../static/images/edit.png' alt='Editar'></button>";
             echo "</div>";
             echo "</div>";
             echo "</section>";
@@ -53,7 +53,7 @@ function update_character($id, $nome, $identidade_civil, $habilidades, $historia
 
     global $conexao;
 
-    $sql = "UPDATE usuarios SET nome = '$nome',
+    $sql = "UPDATE heroes SET nome_heroi = '$nome',
     identidade_civil = '$identidade_civil',
     habilidades = '$habilidades',
     historia = '$historia',

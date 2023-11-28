@@ -111,15 +111,12 @@ body {
 }
 
 .card-create {
-  margin: 1rem;
   border: solid 0.5rem var(--tittle-color);
   border-radius: 1rem;
   width: 70rem;
   height: 75rem;
   background-color: var(--modal-bg-color);
-  align-items: center;
   display: flex;
-  justify-content: center;
   transition: border 0.3s ease;
 }
 

@@ -107,6 +107,17 @@
   cursor: pointer;
 }
 
+#idDelete {
+  display: none;
+  width: 0;
+}
+
+.deleteButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
 @media (max-width: 1366px) {
 
   #modal-delete {

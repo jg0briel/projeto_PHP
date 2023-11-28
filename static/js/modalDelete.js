@@ -1,10 +1,16 @@
 const deleteButtons = document.querySelectorAll('.open-modal-btn-delete');
 
 deleteButtons.forEach(button => {
-    button.addEventListener('click', openModalDelete);
+    button.addEventListener('click', function() {
+        const id = button.dataset.id;
+        openModalDelete(id);
+    });
 });
 
-function openModalDelete() {
+function openModalDelete(id) {
+  const atualizarId = document.querySelector("#idDelete");
+  atualizarId.value = id;
+
   document.querySelector('#overlay-delete').classList.add('active');
   document.querySelector('#modal-delete').classList.add('active');
 
@@ -26,3 +32,28 @@ function closeModalDelete() {
   }, 300);
 }
 
+document
+  .querySelector(".content form")
+  .addEventListener("submit", handleSubmit);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const deleteHero = document.getElementById("deleteHero");
+
+  deleteHero.addEventListener("submit", function (event) {
+    closeModalDelete();
+    
+    const formData = new FormData(deleteHero);
+    
+    fetch("../Crud/delete.php", {
+      method: "POST",
+      body: formData,
+    })
+      .then((data) => {
+        console.log("Sucesso:", data);
+      })
+      .catch((error) => {
+        console.error("Erro:", error);
+      });
+    location.reload();
+  });
+});

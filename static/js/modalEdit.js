@@ -7,23 +7,6 @@ editButtons.forEach((button) => {
   });
 });
 
-function receiveData(id) {
-  const formData = new FormData();
-  formData.append("id", id);
-
-  fetch("../Crud/receiveDataById.php", {
-    method: "POST",
-    body: formData,
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.error("Erro:", error);
-    });
-}
-
 function openModal(id) {
   const atualizarId = document.querySelector("#idEdit");
   atualizarId.value = id;
@@ -54,21 +37,20 @@ function handleSubmit(e) {
   closeModal();
 }
 
-document
-  .querySelector(".content form")
-  .addEventListener("submit", handleSubmit);
-
 function resizeTextArea(textarea) {
   textarea.style.height = "auto";
   textarea.style.height = textarea.scrollHeight + "px";
 }
 
+document
+  .querySelector(".content form")
+  .addEventListener("submit", handleSubmit);
+
 document.addEventListener("DOMContentLoaded", function () {
   const editHero = document.getElementById("editHero");
 
   editHero.addEventListener("submit", function (event) {
-    event.preventDefault();
-    closeModalCreate();
+    closeModal();
 
     const formData = new FormData(editHero);
 
@@ -82,5 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => {
         console.error("Erro:", error);
       });
+    location.reload();
   });
 });

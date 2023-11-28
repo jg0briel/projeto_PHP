@@ -39,7 +39,7 @@ ini_set('display_errors', '1');
       <?php
         read_heroes();
       ?>
-      <section class="card-create">
+      <section class="card card-create">
         <div class="sizeFull">
           <button class="open-modal-btn-create">Adicione aqui o seu herói!</button>
         </div>
@@ -69,7 +69,10 @@ ini_set('display_errors', '1');
                     <input type="text" id="universo" name="universo" required>
     
                     <label for="funcao">Função</label>
-                    <input type="text" id="funcao" name="funcao" required>
+                    <select name="funcao" id="funcao" required>
+                      <option value="Herói">Herói</option>
+                      <option value="Vilão">Vilão</option>
+                    </select>
       
                     <button type="submit">Cadastrar</button>
                   </form>
@@ -100,7 +103,10 @@ ini_set('display_errors', '1');
                     <input type="text" id="universoEdit" name="universoEdit" required>
     
                     <label for="funcao">Função</label>
-                    <input type="text" id="funcaoEdit" name="funcaoEdit" required>
+                    <select name="funcaoEdit" id="funcaoEdit" required>
+                      <option value="Herói">Herói</option>
+                      <option value="Vilão">Vilão</option>
+                    </select>
       
                     <button type="submit">Cadastrar</button>
                   </form>
@@ -115,8 +121,13 @@ ini_set('display_errors', '1');
                   <div class="text-delete">
                     <p>Tem certeza que deseja excluir?</p>
                   </div>
-                  <button onclick="deleteData()">Sim</button>
-                  <button onclick="closeModalDelete()">Não</button>
+                  <div class="deleteButtons">
+                    <form id="deleteHero" method="POST">
+                      <input type="text" value="" name="id" id="idDelete">
+                      <button type="submit">Sim</button>
+                    </form>
+                    <button onclick="closeModalDelete()">Não</button>
+                  </div>
                 </div>
               </div>
           </div>

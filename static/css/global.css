@@ -111,10 +111,6 @@ body {
 }
 
 .card-create {
-  border: solid 0.5rem var(--tittle-color);
-  border-radius: 1rem;
-  width: 70rem;
-  height: 75rem;
   background-color: var(--modal-bg-color);
   display: flex;
   transition: border 0.3s ease;
@@ -125,7 +121,7 @@ body {
   font-family: "Poppins";
   font-weight: 700;
   font-size: 3.2rem;
-  margin: 0 2rem;
+
   height: 100%;
   transition: color 0.3s ease;
 }
@@ -142,6 +138,7 @@ body {
   height: 100%;
   width: 100%;
   transition: background-color 0.3s ease;
+  border-radius: 1rem;
 }
 
 .sizeFull:hover {
@@ -171,12 +168,6 @@ body {
 }
 
 @media (max-width: 1366px) {
-  .card-create {
-    width: 50rem;
-    height: 75rem;
-    margin: 1rem;
-  }
-
   .card {
     width: 50rem;
     height: 75rem;

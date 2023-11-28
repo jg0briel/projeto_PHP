@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const createHero = document.getElementById("createHero");
 
   createHero.addEventListener("submit", function (event) {
-    event.preventDefault();
     closeModalCreate();
 
     const formData = new FormData(createHero);
@@ -48,5 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => {
         console.error("Erro:", error);
       });
+    location.reload();
   });
 });

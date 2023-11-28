@@ -137,6 +137,33 @@
   border: 0;
 }
 
+#funcao, #funcaoEdit {
+  background-color: transparent;
+  border: solid 0.2rem var(--tittle-color);
+  border-radius: 0.4rem;
+  color: var(--text-color);
+  font-family: "Poppins";
+  font-size: 2rem;
+  word-wrap: break-all;
+}
+
+#funcao option, #funcaoEdit option {
+  background-color: var(--modal-bg-color);
+  color: var(--text-color);
+  font-family: "Poppins";
+  font-size: 2rem;
+}
+
+#funcao:focus, #funcaoEdit:focus {
+  outline: none;
+  background-color: var(--modal-bg-color);
+  color: var(--text-color);
+}
+
+#idEdit {
+  display: none;
+}
+
 @media (max-width: 1366px) {
   #modal {
     left: 35rem;

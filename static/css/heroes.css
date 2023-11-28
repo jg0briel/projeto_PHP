@@ -1,11 +1,11 @@
 .main {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
   text-align: center;
   margin: 0 10rem;
-  gap: 10rem;
+  gap: 15rem;
   padding-top: 10rem;
 }
 
@@ -28,4 +28,11 @@
   float: left;
   height: 15rem;
   overflow-y: scroll;
+}
+
+
+@media (max-width: 1366px) {
+  .main {
+    gap:10rem
+  }
 }

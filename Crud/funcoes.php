@@ -67,7 +67,7 @@ function read_heroes()
             echo "<p>Função: " . $row["funcao"] . "</p>";
             echo "</div>";
             echo "<div class='delete'>";
-            echo "<button class='open-modal-btn-delete'><img src='../static/images/delete.png' alt='Apagar'></button>";
+            echo "<button class='open-modal-btn-delete' data-id='" . $row['id'] . "'><img src='../static/images/delete.png' alt='Apagar'></button>";
             echo "</div>";
             echo "<div class='edit'>";
             echo "<button class='open-modal-btn' data-id='" . $row['id'] . "'><img src='../static/images/edit.png' alt='Editar'></button>";
@@ -98,7 +98,7 @@ function read_villains()
             echo "<p>Função: " . $row["funcao"] . "</p>";
             echo "</div>";
             echo "<div class='delete'>";
-            echo "<button class='open-modal-btn-delete'><img src='../static/images/delete.png' alt='Apagar'></button>";
+            echo "<button class='open-modal-btn-delete' data-id='" . $row['id'] . "'><img src='../static/images/delete.png' alt='Apagar'></button>";
             echo "</div>";
             echo "<div class='edit'>";
             echo "<button class='open-modal-btn' data-id='" . $row['id'] . "'><img src='../static/images/edit.png' alt='Editar'></button>";
@@ -134,7 +134,7 @@ function delete_character($id) {
 
     global $conexao;
 
-    $sql = "DELETE FROM usuarios WHERE id=$id";
+    $sql = "DELETE FROM heroes WHERE id=$id";
     if ($conexao->query($sql) === TRUE) {
         echo "Registro deletado com sucesso";
     } else {

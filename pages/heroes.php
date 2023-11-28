@@ -12,7 +12,7 @@ ini_set('display_errors', '1');
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Heroes Database</title>
     <link rel="stylesheet" href="../static/css/global.css" />
-      <link rel="stylesheet" href="../static/css/heroes.css" />
+    <link rel="stylesheet" href="../static/css/heroes.css" />
     <link rel="stylesheet" href="../static/css/modalExcluir.css">
     <link rel="stylesheet" href="../static/css/modalEditar.css">
     <link rel="stylesheet" href="../static/css/modalCriar.css">

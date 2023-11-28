@@ -40,7 +40,7 @@
   font-size: 2.4rem;
   overflow-y: scroll;
   top: 2rem;
-  left:40rem;
+  left: 40rem;
   max-height: 68rem;
 }
 
@@ -80,7 +80,7 @@
   border: solid 0.2rem var(--tittle-color);
   border-radius: 0.4rem;
   color: var(--text-color);
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-size: 2rem;
   word-wrap: break-all;
 }
@@ -90,10 +90,10 @@
   border: solid 0.2rem var(--tittle-color);
   border-radius: 0.4rem;
   color: var(--text-color);
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-size: 2rem;
   resize: none;
-  overflow-y: hidden; 
+  overflow-y: hidden;
   min-height: 3rem;
   width: 100%;
 }
@@ -111,7 +111,7 @@
 .content button {
   margin-top: 1rem;
   background-color: var(--tittle-color);
-  font-family: 'Poppins';
+  font-family: "Poppins";
   color: var(--modal-bg-color);
   font-weight: 800;
   font-size: 2.4rem;
@@ -138,9 +138,8 @@
 }
 
 @media (max-width: 1366px) {
-
   #modal {
     left: 35rem;
-    height: 50rem;
+    height: 55rem;
   }
 }

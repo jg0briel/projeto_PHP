@@ -80,7 +80,7 @@
   border: solid 0.2rem var(--tittle-color);
   border-radius: 0.4rem;
   color: var(--text-color);
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-size: 2rem;
   word-wrap: break-all;
 }
@@ -90,10 +90,10 @@
   border: solid 0.2rem var(--tittle-color);
   border-radius: 0.4rem;
   color: var(--text-color);
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-size: 2rem;
   resize: none;
-  overflow-y: hidden; 
+  overflow-y: hidden;
   min-height: 3rem;
   width: 100%;
 }
@@ -111,7 +111,7 @@
 .content-create button {
   margin-top: 1rem;
   background-color: var(--tittle-color);
-  font-family: 'Poppins';
+  font-family: "Poppins";
   color: var(--modal-bg-color);
   font-weight: 800;
   font-size: 2.4rem;
@@ -140,5 +140,6 @@
 @media (max-width: 1366px) {
   #modal-create {
     left: 35rem;
+    height: 55rem;
   }
 }

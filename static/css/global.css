@@ -180,5 +180,6 @@ body {
   .card {
     width: 50rem;
     height: 75rem;
+    margin: 1rem;
   }
 }

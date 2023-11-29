@@ -1,2 +1,11 @@
 vídeo
-https://www.youtube.com/watch?v=UHN1N9hOG0c&t=4s
+https://www.youtube.com/watch?v=UHN1N9hOG0c
+
+Envio bem-sucedido!
+Curso: 1815505, Programação Web - B_ (Mat) _UNIPÊ_UNIPÊ
+Avaliação: ENTREGA PROJETO PRÁTICO - DATA 28/11/2023 - 23:59
+
+Data de envio: 28/11/23 22:51
+Tamanho do envio: 146 bytes
+Autor do envio: Gabriel Montenegro de Oliveira Bezerra UNIPÊ_Ciência da Computação (Bacharelado)_2B_20232
+Número de confirmação: e407b4e150fc441193e81da161e270b2
